@@ -1,0 +1,13 @@
+# ignore everything
+*
+
+# allow build output
+!dist/
+!dist/**
+
+# allow git files
+!.gitignore
+
+# logs (optional but fine)
+*.log
+
