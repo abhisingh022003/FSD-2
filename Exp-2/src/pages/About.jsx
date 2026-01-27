@@ -9,7 +9,11 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Box,
 } from '@mui/material';
+import Button from '../components/Button.jsx';
+import Dropdown from '../components/Dropdown.jsx';
+import TextField from '../components/TextField.jsx';
 
 const students = [
   { id: 1, name: 'Rahul Kumar', roll: '101', grade: 'A' },
@@ -48,6 +52,15 @@ export default function About() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <Typography variant="h5" gutterBottom sx={{ mt: 6 }}>
+        Components Demo
+      </Typography>
+      <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', mt: 2 }}>
+        <Button />
+        <Dropdown />
+        <TextField />
+      </Box>
     </Container>
   );
 }

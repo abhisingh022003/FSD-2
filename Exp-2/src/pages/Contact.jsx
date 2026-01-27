@@ -12,6 +12,9 @@ import {
   DialogContent,
   DialogActions,
 } from '@mui/material';
+import CustomButton from '../components/Button.jsx';
+import Dropdown from '../components/Dropdown.jsx';
+import CustomTextField from '../components/TextField.jsx';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -78,6 +81,15 @@ export default function Contact() {
           <Button onClick={() => setModalOpen(false)}>Close</Button>
         </DialogActions>
       </Dialog>
+
+      <Typography variant="h5" gutterBottom sx={{ mt: 6 }}>
+        Components Demo
+      </Typography>
+      <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', mt: 2 }}>
+        <CustomButton />
+        <Dropdown />
+        <CustomTextField />
+      </Box>
     </Container>
   );
 }

@@ -1,10 +1,13 @@
-import { Dropdown } from "react-bootstrap";
+import Dropdown from "@mui/material/Select";
 export default function basicdropdown() {
     return(
         <>
-        <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Dropdown Button
-  </Dropdown.Toggle></>
+        <Dropdown native>
+            <option aria-label="None" value="" />
+            <option value={10}>Option 1</option>
+            <option value={20}>Option 2</option>
+            <option value={30}>Option 3</option>
+        </Dropdown>
+        </>
     )
-{"}"}
+}
