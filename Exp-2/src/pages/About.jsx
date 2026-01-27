@@ -10,10 +10,13 @@ import {
   TableRow,
   Paper,
   Box,
+  Grid,
 } from '@mui/material';
 import Button from '../components/Button.jsx';
-import Dropdown from '../components/Dropdown.jsx';
 import TextField from '../components/TextField.jsx';
+import Select from '../components/Select.jsx';
+import Rating from '../components/Rating.jsx';
+import Checkbox from '../components/Checkbox.jsx';
 
 const students = [
   { id: 1, name: 'Rahul Kumar', roll: '101', grade: 'A' },
@@ -29,10 +32,10 @@ export default function About() {
         Student Data Table
       </Typography>
 
-      <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>
+      <Typography variant="h5" gutterBottom sx={{ mt: 4, fontWeight: 600 }}>
         Student Records
       </Typography>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{ borderRadius: 3, boxShadow: '0 12px 35px rgba(15, 23, 42, 0.08)' }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -53,14 +56,25 @@ export default function About() {
         </Table>
       </TableContainer>
 
-      <Typography variant="h5" gutterBottom sx={{ mt: 6 }}>
+      <Typography variant="h5" gutterBottom sx={{ mt: 6, fontWeight: 600 }}>
         Components Demo
       </Typography>
-      <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', mt: 2 }}>
-        <Button />
-        <Dropdown />
-        <TextField />
-      </Box>
+      <Paper elevation={0} sx={{ p: 3, borderRadius: 3, boxShadow: '0 10px 30px rgba(15, 23, 42, 0.06)', border: '1px solid #eef2f7' }}>
+        <Grid container spacing={2.5}>
+          {[{ title: 'Button', comp: <Button /> },
+            { title: 'TextField', comp: <TextField /> },
+            { title: 'Select', comp: <Select /> },
+            { title: 'Rating', comp: <Rating /> },
+            { title: 'Checkbox', comp: <Checkbox /> }].map((item) => (
+              <Grid item xs={12} sm={6} md={4} key={item.title}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>{item.title}</Typography>
+                  {item.comp}
+                </Box>
+              </Grid>
+          ))}
+        </Grid>
+      </Paper>
     </Container>
   );
 }

@@ -11,10 +11,13 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
+  Paper,
 } from '@mui/material';
 import CustomButton from '../components/Button.jsx';
-import Dropdown from '../components/Dropdown.jsx';
 import CustomTextField from '../components/TextField.jsx';
+import CustomSelect from '../components/Select.jsx';
+import CustomRating from '../components/Rating.jsx';
+import CustomCheckbox from '../components/Checkbox.jsx';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -35,7 +38,7 @@ export default function Contact() {
       <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>
         Get In Touch
       </Typography>
-      <Card>
+      <Card sx={{ boxShadow: '0 12px 35px rgba(15, 23, 42, 0.08)', borderRadius: 3 }}>
         <CardContent>
           <Box component="form" onSubmit={handleFormSubmit} sx={{ mt: 3 }}>
             <TextField
@@ -85,11 +88,30 @@ export default function Contact() {
       <Typography variant="h5" gutterBottom sx={{ mt: 6 }}>
         Components Demo
       </Typography>
-      <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', mt: 2 }}>
-        <CustomButton />
-        <Dropdown />
-        <CustomTextField />
-      </Box>
+      <Paper elevation={0} sx={{ p: 3, borderRadius: 3, boxShadow: '0 10px 30px rgba(15, 23, 42, 0.06)', border: '1px solid #eef2f7' }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 2.5 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Button</Typography>
+            <CustomButton />
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>TextField</Typography>
+            <CustomTextField />
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Select</Typography>
+            <CustomSelect />
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Rating</Typography>
+            <CustomRating />
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Checkbox</Typography>
+            <CustomCheckbox />
+          </Box>
+        </Box>
+      </Paper>
     </Container>
   );
 }
