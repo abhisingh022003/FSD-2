@@ -8,6 +8,10 @@
 # allow git files
 !.gitignore
 
+# allow Exp-4
+!Exp-4/
+!Exp-4/**
+
 # logs (optional but fine)
 *.log
 
