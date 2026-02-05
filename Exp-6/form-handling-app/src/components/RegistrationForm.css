@@ -1,0 +1,81 @@
+.registration-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.checkbox-group {
+  margin: 1.5rem 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.25rem;
+}
+
+.checkbox-label span {
+  flex: 1;
+}
+
+.checkbox-label a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+.password-strength {
+  margin-top: 0.5rem;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.strength-fill {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.password-strength span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.password-requirements {
+  background: #f0f8ff;
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+}
+
+.password-requirements h4 {
+  margin-top: 0;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.password-requirements ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.password-requirements li {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
