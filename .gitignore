@@ -12,6 +12,13 @@
 !Exp-4/
 !Exp-4/**
 
+# allow Exp-9
+!Exp-9/
+!Exp-9/**
+
 # logs (optional but fine)
 *.log
 
+
+# Local Netlify folder
+.netlify
