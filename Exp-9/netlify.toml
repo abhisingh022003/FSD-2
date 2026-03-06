@@ -1,0 +1,13 @@
+[build]
+  functions = "netlify/functions"
+  publish   = "public"
+  command   = "pip install -r netlify/functions/api/requirements.txt -t netlify/functions/api/"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from   = "/*"
+  to     = "/.netlify/functions/api"
+  status = 200
+  force  = true
