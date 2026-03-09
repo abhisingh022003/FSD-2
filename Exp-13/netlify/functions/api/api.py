@@ -2,7 +2,7 @@ import sys
 import os
 
 # Make the Exp-13 root importable
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 
 import serverless_wsgi
 from app import app, db

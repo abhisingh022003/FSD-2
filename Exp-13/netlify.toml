@@ -1,8 +1,11 @@
 [build]
-  base    = "Exp-13"
+  base      = "Exp-13"
   functions = "netlify/functions"
-  publish = "."
-  command = "pip install -r requirements.txt"
+  publish   = "."
+  command   = "pip install -r requirements.txt"
+
+[functions]
+  included_files = ["app.py"]
 
 [[redirects]]
   from   = "/*"
