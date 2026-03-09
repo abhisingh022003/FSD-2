@@ -16,8 +16,17 @@
 !Exp-9/
 !Exp-9/**
 
+# allow Exp-13
+!Exp-13/
+!Exp-13/**
+
 # logs (optional but fine)
 *.log
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
 
 
 # Local Netlify folder
