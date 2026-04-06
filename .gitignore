@@ -20,6 +20,10 @@
 !Exp-13/
 !Exp-13/**
 
+# allow Exp7
+!Exp7/
+!Exp7/**
+
 # logs (optional but fine)
 *.log
 
