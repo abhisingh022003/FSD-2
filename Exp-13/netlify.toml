@@ -1,9 +1,10 @@
 [build]
   base      = "Exp-13"
+  functions = "netlify/functions"
   publish   = "."
 
 [[redirects]]
-  from   = "/api/*"
-  to     = "https://exp-13-flask-crud-api.onrender.com/:splat"
+  from   = "/*"
+  to     = "/.netlify/functions/api/:splat"
   status = 200
   force  = true

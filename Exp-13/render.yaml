@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: exp-13-flask-crud-api
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
-    plan: free
-    healthCheckPath: /
-    autoDeploy: true
