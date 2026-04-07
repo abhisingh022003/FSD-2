@@ -12,7 +12,7 @@ This project implements a complete full-stack CRUD application to cover Experime
 - API error handling and loading states
 - React Error Boundary integration
 - External API integration (JSONPlaceholder)
-- Database-backed backend (MongoDB with Mongoose)
+- Database-backed backend (MongoDB with PyMongo)
 
 ---
 
@@ -22,12 +22,9 @@ This project implements a complete full-stack CRUD application to cover Experime
 Exp7/
 ├── backend/
 │   ├── src/
-│   │   ├── middleware/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── utils/
+│   │   └── index.py
 │   ├── .env.example
-│   └── package.json
+│   └── requirements.txt
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
@@ -48,7 +45,9 @@ Exp7/
 
 ```bash
 cd backend
-npm install
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 2. Create `.env` from template:
@@ -65,7 +64,7 @@ cp .env.example .env
 4. Start backend:
 
 ```bash
-npm run dev
+python src/index.py
 ```
 
 Backend runs by default at `http://localhost:5000`.
@@ -126,16 +125,15 @@ Frontend runs by default at `http://localhost:5173`.
 5. **Axios usage** — centralized in `apiClient` + `apiService`.
 6. **Authentication tokens** — JWT stored in localStorage and injected by interceptor.
 7. **CRUD with backend** — full task CRUD implemented.
-8. **Real backend integration** — React app uses Express API + MongoDB.
+8. **Real backend integration** — React app uses Flask API + MongoDB.
 
 ---
 
 ## Useful Scripts
 
 ### Backend
-- `npm run dev` - start with nodemon
-- `npm run start` - start normally
-- `npm run check` - syntax check entry file
+- `python src/index.py` - start Flask backend
+- `python -m py_compile src/index.py` - syntax check entry file
 
 ### Frontend
 - `npm run dev` - start Vite dev server
@@ -147,5 +145,5 @@ Frontend runs by default at `http://localhost:5173`.
 ## Tech Stack
 
 - **Frontend:** React, Axios, Vite
-- **Backend:** Node.js, Express, Mongoose, JWT
+- **Backend:** Python, Flask, PyMongo, JWT
 - **Database:** MongoDB
