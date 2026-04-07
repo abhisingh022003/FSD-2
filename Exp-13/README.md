@@ -10,7 +10,7 @@ It runs locally with SQLite by default, and supports MySQL via environment varia
 - Marshmallow validation
 - SQLAlchemy ORM
 - SQLite fallback for local runs
-- Netlify Functions wrapper for deployment
+- Render-ready production config (`render.yaml`)
 
 ## Local Run
 
@@ -40,12 +40,12 @@ Use either:
 
 If no DB vars are provided, SQLite is used.
 
-## Netlify Deployment
+## Production Deployment
 
-This project includes:
+- Render backend config is in `/render.yaml` (repo root).
+- Recommended start command on Render is `gunicorn app:app`.
+- Use `DATABASE_URL` in Render environment settings for persistent DB.
 
-- `netlify.toml`
-- `netlify/functions/api/api.py` (WSGI handler)
-- function-level `requirements.txt`
+## Netlify
 
-On Netlify, requests are redirected to `/.netlify/functions/api/*`.
+Netlify is currently set up as a site deployment target, but the Python API should run on Render and be proxied (if needed) from Netlify.

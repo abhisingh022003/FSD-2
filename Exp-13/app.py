@@ -14,6 +14,8 @@ MYSQL_ENV_KEYS = ("MYSQL_HOST", "MYSQL_PORT", "MYSQL_USER", "MYSQL_PASSWORD", "M
 def normalize_database_url(database_url: str) -> str:
     if database_url.startswith("mysql://"):
         return database_url.replace("mysql://", "mysql+pymysql://", 1)
+    if database_url.startswith("postgres://"):
+        return database_url.replace("postgres://", "postgresql+psycopg2://", 1)
     return database_url
 
 
@@ -86,6 +88,11 @@ app.config["SQLALCHEMY_DATABASE_URI"] = build_database_uri()
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
+
+
+def initialize_database() -> None:
+    with app.app_context():
+        db.create_all()
 
 
 class Student(db.Model):
@@ -212,10 +219,10 @@ def delete_student(student_id: int):
     return jsonify({"message": "Student deleted successfully."}), 200
 
 
-if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
+initialize_database()
 
+
+if __name__ == "__main__":
     preferred_port = resolve_server_port()
     server_port, used_random_port = choose_server_port(preferred_port)
 
