@@ -1,7 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-.netlify/
-# Netlify function installed dependencies (installed at build time)
-netlify/functions/api/jwt/
-netlify/functions/api/*.dist-info/
